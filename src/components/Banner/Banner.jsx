@@ -10,7 +10,7 @@ const Banner = () => {
                 />
                 <div className='md:w-2/4'>
                     <h1 className="text-5xl font-bold">Supercharge Your Digital Workflow</h1>
-                    <p className="py-6">
+                    <p className="py-6 w-11/12">
                         Access premium AI tools, design assets, templates, and productivity
                         software—all in one place. Start creating faster today.
                         Explore Products
