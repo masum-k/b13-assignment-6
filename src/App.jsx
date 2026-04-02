@@ -1,21 +1,26 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
-import Card from './components/Cards/CardContainer'
+import CardContainer from './components/CardContainer/CardContainer'
 import Navbar from './components/Navbar/Navbar'
 import Rating from './UI/Rating'
+
 
 const cardDataPromise = fetch('cardData.json')
   .then(res => res.json());
 
 function App() {
+  const [productCount, setproductCount] = useState(0)
   return (
     <div>
-      <Navbar />
+      <Navbar productCount={productCount} />
       <Banner />
       <Rating />
       <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
-        <Card cardDataPromise={cardDataPromise} />
+        <CardContainer
+          productCount={productCount}
+          setproductCount={setproductCount}
+          cardDataPromise={cardDataPromise} />
       </Suspense>
     </div>
   )

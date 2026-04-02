@@ -1,10 +1,19 @@
 import React from 'react';
 
-const Cards = ({ card }) => {
-    //name, price, tag, description,period,features
+const Cards = ({ card,
+    productCount,
+    setproductCount,
+    cartItem,
+    setcartItem,
+    totalAmount,
+    settotalAmount }) => {
+    const updateProductCount = () => {
+        setproductCount(productCount + 1)
+        setcartItem([...cartItem, card])
+    }
     return (
         <div className="card bg-base-100 border-2 border-gray-400">
-            <div className="card-body pt-2">
+            <div className="card-body pt-2 ">
                 <span className={`text-white font-semibold badge badge-xs place-self-end 
                     ${card.tag === 'Best Seller' ? 'badge-warning'
                         : card.tag === 'Popular' ? 'badge-info'
@@ -27,10 +36,14 @@ const Cards = ({ card }) => {
                     }
                 </ul>
                 <div className="mt-6">
-                    <button className="btn rounded-full bg-linear-to-r from-[#652CF7] to-[#9116FA] btn-block text-white">Buy Now</button>
+                    <button onClick={updateProductCount}
+                        className="btn rounded-full 
+                    bg-linear-to-r from-[#652CF7] to-[#9116FA]
+                     btn-block text-white">Buy Now</button>
                 </div>
             </div>
         </div>
+
     );
 };
 
