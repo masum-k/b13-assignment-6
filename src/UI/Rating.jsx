@@ -2,7 +2,7 @@ import React from 'react';
 
 const Rating = () => {
     return (
-        <div className='md:flex justify-center py-8 font-bold mt-12 text-white bg-linear-to-r from-[#622FF7] to-[#9415FA]'>
+        <div className='md:flex text-center justify-center py-8 font-bold mt-12 text-white bg-linear-to-r from-[#622FF7] to-[#9415FA]'>
             <div>
                 <h1 className='text-6xl'>
                     50K+

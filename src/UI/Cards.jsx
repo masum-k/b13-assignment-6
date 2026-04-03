@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { toast } from 'react-toastify';
 const Cards = ({ card,
     productCount,
     setproductCount,
@@ -10,9 +10,11 @@ const Cards = ({ card,
     const updateProductCount = () => {
         setproductCount(productCount + 1)
         setcartItem([...cartItem, card])
+        settotalAmount(totalAmount + card.price)
+        toast.success("Added To Cart")
     }
     return (
-        <div className="card bg-base-100 border-2 border-gray-400">
+        <div className="card bg-base-100 border-2 mx-2 my-2 border-gray-400">
             <div className="card-body pt-2 ">
                 <span className={`text-white font-semibold badge badge-xs place-self-end 
                     ${card.tag === 'Best Seller' ? 'badge-warning'
@@ -36,7 +38,7 @@ const Cards = ({ card,
                     }
                 </ul>
                 <div className="mt-6">
-                    <button onClick={updateProductCount}
+                    <button  onClick={updateProductCount}
                         className="btn rounded-full 
                     bg-linear-to-r from-[#652CF7] to-[#9116FA]
                      btn-block text-white">Buy Now</button>

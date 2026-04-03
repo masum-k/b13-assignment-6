@@ -29,7 +29,7 @@ const Card = ({ cardDataPromise, productCount, setproductCount }) => {
             </div>
             {
                 cartToggle ?
-                    <div className="mt-8 md:grid grid-cols-3 container mx-auto gap-4">
+                    <div className="mt-8 md:grid grid-cols-3 container mx-auto">
                         {cardData.map(card =>
                             <Cards
                                 key={card.id}
@@ -44,7 +44,14 @@ const Card = ({ cardDataPromise, productCount, setproductCount }) => {
                     </div>
                     :
                     <div className="mt-8  container mx-auto gap-4">
-                        <CartContainer cartItem={cartItem} />
+                        <CartContainer
+                            cartItem={cartItem}
+                            setcartItem={setcartItem}
+                            totalAmount={totalAmount}
+                            settotalAmount={settotalAmount}
+                            productCount={productCount}
+                            setproductCount={setproductCount}
+                        />
                     </div>
             }
         </div>
