@@ -18,7 +18,7 @@ const Navbar = ({ productCount }) => {
                         <li><a>FAQ</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl text-purple-700">DigiTools</a>
+                <a className="btn btn-ghost text-3xl text-purple-700">ToolsLand BD</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -43,7 +43,7 @@ const Navbar = ({ productCount }) => {
                     </div>
                     <p>Login</p>
                 </div>
-                <a className="btn rounded-full bg-linear-to-r from-purple-700 to-purple-500 text-white font-semibold">Get Started</a>
+                <a className="btn rounded-full bg-linear-to-r from-[#6A2BF8] to-[#8D18F9] text-white font-semibold">Get Started</a>
             </div>
         </div>
     );
