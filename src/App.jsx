@@ -8,12 +8,14 @@ import Cards from './UI/Cards'
 import Pricing from './components/Pricing/Pricing'
 import Steps from './components/Steps/Steps'
 import { ToastContainer } from 'react-toastify';
+import Footer from './components/Footer/Footer'
 
 const cardDataPromise = fetch('cardData.json')
   .then(res => res.json());
 
 function App() {
   const [productCount, setproductCount] = useState(0)
+  const [cartToggle, setcartToggle] = useState(true)
   return (
     <div>
       <Navbar productCount={productCount} />
@@ -22,11 +24,21 @@ function App() {
         <CardContainer
           productCount={productCount}
           setproductCount={setproductCount}
+          cartToggle={cartToggle}
+          setcartToggle={setcartToggle}
           cardDataPromise={cardDataPromise} />
       </Suspense>
-      <Rating />
-      <Steps />
-      <Pricing />
+      {
+        cartToggle
+          ?
+          <>
+            <Rating />
+            <Steps />
+            <Pricing />
+          </>
+          : ""
+      }
+      <Footer />
       <ToastContainer />
     </div>
   )

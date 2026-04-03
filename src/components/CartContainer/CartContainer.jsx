@@ -9,6 +9,7 @@ const CartContainer = ({ cartItem, setcartItem, totalAmount, settotalAmount, pro
         setcartItem("")
         setproductCount(0)
         toast.success('Checkout Successful')
+        settotalAmount(0)
     }
     return (
         <>

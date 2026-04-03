@@ -2,12 +2,11 @@ import { use, useState } from "react";
 import Cards from "../../UI/Cards";
 import CartContainer from "../CartContainer/CartContainer";
 
-const Card = ({ cardDataPromise, productCount, setproductCount }) => {
+const Card = ({ cardDataPromise, cartToggle, setcartToggle, productCount, setproductCount }) => {
 
     const [cartItem, setcartItem] = useState([])
     const [totalAmount, settotalAmount] = useState(0)
-
-    const [cartToggle, setcartToggle] = useState(true)
+    
     const cardData = use(cardDataPromise)
 
     return (
